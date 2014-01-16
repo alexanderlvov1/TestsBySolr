@@ -11,3 +11,11 @@
 .table-nonfluid {
    width: auto;
 }
+
+.incorrect {
+    background-color: red;
+}
+.correct {
+    background-color: lightgreen;;
+}
+

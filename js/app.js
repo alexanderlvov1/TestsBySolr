@@ -24,6 +24,20 @@ var storeApp = angular.module('AngularStore', ['ngRoute']).
 
 // create a data service that provides a store and a shopping cart that
 // will be shared by all views (instead of creating fresh ones for each view).
+storeApp.factory('HttpService', ['$http', function($http) {
+    var doRequest = function(searchField) {
+        return $http({
+            method: 'JSONP',
+            url: searchField
+            //url: nprUrl + '&searchField=' + searchField + '&callback=JSON_CALLBACK'
+        });
+    }
+
+    return {
+        search: function(searchField) { return doRequest(searchField); }
+    };
+}]);
+
 storeApp.factory("DataService", function () {
 
     // create store

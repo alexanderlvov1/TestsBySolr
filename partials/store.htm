@@ -40,10 +40,16 @@
             {{test.text_txt}}
         </td>
         <td>
+            {{test.answer_txt}}
+        </td>
+        <td>
             <input type="text" ng-model="test.answer" placeholder="Enter your answer" />
         </td>
         <td>
-            <h5>Your answer is: {{ test.answer }}</h5>
+            <div ng-controller="watchController">
+                <!--<h5>Your answer is: {{ test.found_answer }}</h5>-->
+                <div ng-class='{correct: test.isCorrect}'>{{test.found_answer}}</div>
+            </div>
         </td>
     </tr>
 <!--    <tr class="well">
