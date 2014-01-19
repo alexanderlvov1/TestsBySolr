@@ -37,10 +37,10 @@
             {{test.id}}
         </td>
         <td>
-            {{test.text_txt}}
+            {{test.text_txt | stripQuotes}}
         </td>
         <td>
-            {{test.answer_txt}}
+            {{test.answer_txt | stripQuotes}}
         </td>
         <td>
             <input type="text" ng-model="test.answer" placeholder="Enter your answer" />

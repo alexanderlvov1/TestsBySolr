@@ -20,7 +20,22 @@ var storeApp = angular.module('AngularStore', ['ngRoute']).
       otherwise({
         redirectTo: '/store'
       });
+
+
 }]);
+
+storeApp.filter('stripQuotes', function() {
+    var titleCaseFilter = function(input) {
+
+/*        var words = input.split(' ');
+        for (var i = 0; i < words.length; i++) {
+            words[i] = words[i].charAt(0).toLowerCase() + words[i].slice(1);
+        }
+        return words.join(' ');*/
+        return input.toString();
+    };
+    return titleCaseFilter;
+});
 
 // create a data service that provides a store and a shopping cart that
 // will be shared by all views (instead of creating fresh ones for each view).
